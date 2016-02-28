@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- ko with: home -->
+<div class="jumbotron">
+    <h1>例外発生させる機能！</h1>
+    <p class="lead">適度にお願いします</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>例外１</h2>
+        <p>（Null参照）</p>
+        <p data-bind="text: myHometown"></p>
+        <p>@Html.ActionLink("NullReferenceException", "ThrowNull", "Exception", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink", @class = "btn btn-default" })</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>例外２</h2>
+        <p>（Index範囲外）</p>
+        <p>@Html.ActionLink("IndexOutOfRangeException", "ThrowIndexOutOfRange", "Exception", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink", @class = "btn btn-default" })</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>例外３</h2>
+        <p>（未実装）</p>
+        <p>@Html.ActionLink("NotImplementsException", "ThrowNotImplements", "Exception", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink", @class = "btn btn-default" })</p>
+    </div>
+</div>
+
+<!-- /ko -->
